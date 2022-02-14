@@ -12,11 +12,6 @@ mkdir -p $HOME/docker/volumes/postgres
 ```
 - Run the postgres container
 ```bash
-docker run --rm --name pg-docker -e POSTGRES_PASSWORD=docker -d -p 5432:5432 -v $HOME/docker/volumes/postgres:/var/lib/postgresql/data postgres
-```
-
-
-```bash
 docker run -d --rm \
     --name book-postgres \
     -e POSTGRES_USER=admin \
@@ -25,6 +20,8 @@ docker run -d --rm \
     -p 5432:5432 \
     -v $HOME/docker/volumes/postgres:/var/lib/postgresql/data postgres
 ```
+-  `--rm`  Automatically remove the container and it’s associated file system upon exit.
+- `-v $HOME/docker/volumes/postgres:/var/lib/postgresql/data postgres` -  This ensures that postgres data persists even after the container is removed.
 
 
 ### Alternative 2: using docker compose
