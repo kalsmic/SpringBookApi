@@ -21,4 +21,5 @@ docker exec -it container_id psql -h localhost -U pg_user -d book_db
 
 
 ## Resources
-[PostgreSQL - Psql Comands](https://www.geeksforgeeks.org/postgresql-psql-commands/)
+- [PostgreSQL - Psql Comands](https://www.geeksforgeeks.org/postgresql-psql-commands/)
+- [How to setup Postgres using a docker image](https://hackernoon.com/dont-install-postgres-docker-pull-postgres-bee20e200198)
