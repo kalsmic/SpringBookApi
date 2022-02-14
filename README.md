@@ -1,5 +1,6 @@
 
 ## configure postgres Db with docker
+### Alternative 1: Using Docker directly
 - Pull an image from docker 
 ```bash
 docker pull postgres
@@ -11,12 +12,33 @@ mkdir -p $HOME/docker/volumes/postgres
 ```
 - Run the postgres container
 ```bash
-docker run --rm --name pg-docker -e POSTGRES_PASSWORD=docker -d -p 5432:5432 -v $HOME/docker/volumes/postgres:/var/lib/postgresql/data postgres docker run --rm --name pg-docker -e POSTGRES_USER=pg_user POSTGRES_PASSWORD=pg_password POSTGRES_DB=book_db -d -p 5432:5432 -v $HOME/docker/volumes/postgres:/var/lib/postgresql/data postgres
+docker run --rm --name pg-docker -e POSTGRES_PASSWORD=docker -d -p 5432:5432 -v $HOME/docker/volumes/postgres:/var/lib/postgresql/data postgres
 ```
 
-- To inspect the container with psql
+
 ```bash
-docker exec -it container_id psql -h localhost -U pg_user -d book_db
+docker run -d --rm \
+    --name book-postgres \
+    -e POSTGRES_USER=admin \
+    -e POSTGRES_PASSWORD=pg_password \
+    -e POSTGRES_DB=book_db \
+    -p 5432:5432 \
+    -v $HOME/docker/volumes/postgres:/var/lib/postgresql/data postgres
+```
+
+
+### Alternative 2: using docker compose
+ ```bash
+ docker-compose up -d # run this command to start postgres
+ ```
+
+### Inspecting the container with psql
+```bash 
+docker container ls # run this to get the container id
+```
+
+```bash
+docker exec -it CONTAINER_ID psql -h localhost -U admin -d book_db # replace the CONTAINER_ID to inspect the postgres container using psql
 ```
 
 
