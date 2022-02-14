@@ -26,16 +26,19 @@ docker run -d --rm \
 
 ### Alternative 2: using docker compose
  ```bash
- docker-compose up -d # run this command to start postgres
+ docker-compose up -d
+ # run this command to start postgres
  ```
 
 ### Inspecting the container with psql
 ```bash 
-docker container ls # run this to get the container id
+docker container ls
+# run this to get the container id
 ```
 
 ```bash
-docker exec -it CONTAINER_ID psql -h localhost -U admin -d book_db # replace the CONTAINER_ID to inspect the postgres container using psql
+docker exec -it CONTAINER_ID psql -h localhost -U admin -d book_db
+# replace the CONTAINER_ID to inspect the postgres container using psql
 ```
 
 
