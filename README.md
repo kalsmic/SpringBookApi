@@ -18,3 +18,7 @@ docker run --rm --name pg-docker -e POSTGRES_PASSWORD=docker -d -p 5432:5432 -v 
 ```bash
 docker exec -it container_id psql -h localhost -U pg_user -d book_db
 ```
+
+
+## Resources
+[PostgreSQL - Psql Comands](https://www.geeksforgeeks.org/postgresql-psql-commands/)
