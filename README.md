@@ -1,4 +1,10 @@
 
+
+## Built with
+- Spring Web -> To Build a RESTful Web Service
+- Sprind Data JPA -> To Access Data with JPA
+- Spring Boot DevTools -> To provide a a pleasant aplication development experience
+
 ## configure postgres Db with docker
 ### Alternative 1: Using Docker directly
 - Pull an image from docker 
